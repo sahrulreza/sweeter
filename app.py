@@ -12,8 +12,8 @@ from werkzeug.utils import secure_filename
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-MONGODB_URI = os.environ.get("MONGODB_URI")
-DB_NAME =  os.environ.get("DB_NAME")
+MONGODB_URI = os.environ.get("mongodb+srv://sparta:sparta@cluster0.o9srquj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_NAME =  os.environ.get("client.dbsparta_plus_week4")
 
 app = Flask(__name__)
 
@@ -24,7 +24,7 @@ SECRET_KEY = "SPARTA"
 
 
 client = MongoClient(MONGODB_URI)
-db = client[DB_NAME]
+db = client.dbsparta_plus_week4
 
 @app.route("/")
 def home():
